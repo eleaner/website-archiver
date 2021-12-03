@@ -25,7 +25,8 @@
                 {% elif _follow == "always" %}--robots=2 \
                 {% elif _follow == "even strict" %}--robots=3 \{% endif %}
                 --advanced-maxlinks={{ _site.max_links | default(webarchiver_default.max_links) }} \
-                {% if _site.include_near_files | default(webarchiver_default.include_near_files) %}--near{% endif %}
+                {% if _site.include_near_files | default(webarchiver_default.include_near_files) %}--near{% endif %} \
+                {% if _site.update | default(webarchiver_default.update) %}--update{% endif %}
               
 
               echo
